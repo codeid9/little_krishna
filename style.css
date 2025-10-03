@@ -15,11 +15,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 section {
-    height: 100dvh;
+    min-height: 100dvh;
     width: 100%;
+    overflow-x: hidden;
 }
 /* nav section */
-nav{
+nav {
     position: relative;
     height: 4rem;
     width: 100%;
@@ -29,29 +30,28 @@ nav{
     background: #52788a;
     padding: 0 4rem;
 }
-nav .logo{
+nav .logo {
     position: absolute;
     top: 3rem;
-    left:4rem;
+    left: 4rem;
     z-index: 10;
     height: 6rem;
 }
-nav .logo img{
-    height:100%;
+nav .logo img {
+    height: 100%;
     aspect-ratio: 1/1;
     animation: wave-logo 1s ease-in-out infinite alternate;
-    transform-origin:left bottom;
+    transform-origin: left bottom;
 }
 @keyframes wave-logo {
-    from{
+    from {
         transform: rotate(-55deg);
     }
-    to{
+    to {
         transform: rotate(-35deg);
-
     }
 }
-nav .menu{
+nav .menu {
     position: absolute;
     right: 0.8rem;
     display: flex;
@@ -59,14 +59,14 @@ nav .menu{
     gap: 0.4rem;
     z-index: 10;
 }
-nav .menu li a{
+nav .menu li a {
     position: relative;
-    text-decoration: none; 
-    color:white;
+    text-decoration: none;
+    color: white;
     font-weight: 600;
     padding: 0.4rem;
 }
-nav .menu li a::after{
+nav .menu li a::after {
     content: "";
     position: absolute;
     bottom: 0rem;
@@ -76,7 +76,7 @@ nav .menu li a::after{
     background-color: white;
     transition: all 0.3s;
 }
-nav .menu li:hover a::after{
+nav .menu li:hover a::after {
     width: 100%;
 }
 /* home section */
@@ -131,7 +131,31 @@ nav .menu li:hover a::after{
 }
 
 /* Stories Section */
-
+.stories {
+    background: linear-gradient(45deg,rgb(141, 103, 216), rgb(252, 90, 171));
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+}
+.stories .text h2 {
+    font-family: "Mahaputra";
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+}
+.stories .text ul {
+    list-style: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.stories img {
+    height: 350px;
+    transform: scaleX(-1);
+    filter: invert(1) drop-shadow(0 0 23px #dcf);
+}
 
 /* footer section */
 
@@ -143,12 +167,12 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    nav .menu{
+    nav .menu {
         gap: 0;
         right: 50%;
         transform: translateX(50%);
     }
-    .nav-text{
+    .nav-text {
         display: none;
     }
     .home {
@@ -180,5 +204,26 @@ footer {
     }
     .about .text {
         width: min(600px, 80%);
+    }
+    .stories {
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    .stories .text h2 {
+        text-align: center;
+    }
+    .stories img {
+        width: min(350px, 100%);
+        height: auto;
+    }
+
+    footer {
+        font-size: 1rem;
+    }
+    footer span {
+        display: none;
+    }
+    footer br {
+        display: inline-block !important;
     }
 }

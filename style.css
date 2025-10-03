@@ -132,7 +132,7 @@ nav .menu li:hover a::after {
 
 /* Stories Section */
 .stories {
-    background: linear-gradient(45deg,rgb(141, 103, 216), rgb(252, 90, 171));
+    background: linear-gradient(45deg, rgb(141, 103, 216), rgb(252, 90, 171));
     display: flex;
     align-items: center;
     padding: 0 2rem;
@@ -156,7 +156,36 @@ nav .menu li:hover a::after {
     transform: scaleX(-1);
     filter: invert(1) drop-shadow(0 0 23px #dcf);
 }
-
+/* thoughts section */
+.thoughts {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    background: linear-gradient(-45deg, #1b4d5a, #052733);
+    padding: 2rem;
+}
+.thoughts .img-frame {
+    border: 10px solid white;
+}
+.thoughts .img-frame:hover img {
+    transform: translate(0px, 0px);
+}
+.thoughts .img-frame img {
+    transition: all 0.3s;
+    cursor: pointer;
+    height: 350px;
+    display: block;
+    transform: translate(25px, 25px);
+    box-shadow: 0 0 10px 0 #000;
+}
+.thoughts .text {
+    width: min(450px, 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 /* footer section */
 
 footer {
@@ -215,6 +244,9 @@ footer {
     .stories img {
         width: min(350px, 100%);
         height: auto;
+    }
+    .thoughts {
+        flex-direction: column;
     }
 
     footer {
